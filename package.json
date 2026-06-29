@@ -1,0 +1,168 @@
+{
+  "name": "docx-editor-react",
+  "version": "1.9.0",
+  "type": "module",
+  "description": "React WYSIWYG editor for DOCX files. Self-contained: parsing, layout, rendering, and the React adapter in one package.",
+  "license": "Apache-2.0",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./ui": {
+      "import": {
+        "types": "./dist/ui.d.ts",
+        "default": "./dist/ui.js"
+      },
+      "require": {
+        "types": "./dist/ui.d.cts",
+        "default": "./dist/ui.cjs"
+      }
+    },
+    "./dialogs": {
+      "import": {
+        "types": "./dist/dialogs.d.ts",
+        "default": "./dist/dialogs.js"
+      },
+      "require": {
+        "types": "./dist/dialogs.d.cts",
+        "default": "./dist/dialogs.cjs"
+      }
+    },
+    "./hooks": {
+      "import": {
+        "types": "./dist/hooks.d.ts",
+        "default": "./dist/hooks.js"
+      },
+      "require": {
+        "types": "./dist/hooks.d.cts",
+        "default": "./dist/hooks.cjs"
+      }
+    },
+    "./plugin-api": {
+      "import": {
+        "types": "./dist/plugin-api.d.ts",
+        "default": "./dist/plugin-api.js"
+      },
+      "require": {
+        "types": "./dist/plugin-api.d.cts",
+        "default": "./dist/plugin-api.cjs"
+      }
+    },
+    "./styles": {
+      "import": {
+        "types": "./dist/styles.d.ts",
+        "default": "./dist/styles.js"
+      },
+      "require": {
+        "types": "./dist/styles.d.cts",
+        "default": "./dist/styles.cjs"
+      }
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "typesVersions": {
+    "*": {
+      "ui": ["./dist/ui.d.ts"],
+      "dialogs": ["./dist/dialogs.d.ts"],
+      "hooks": ["./dist/hooks.d.ts"],
+      "plugin-api": ["./dist/plugin-api.d.ts"],
+      "styles": ["./dist/styles.d.ts"]
+    }
+  },
+  "sideEffects": ["*.css"],
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup && bun run build:css",
+    "build:css": "postcss src/react/styles/editor.css -o dist/styles.css",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css}\""
+  },
+  "dependencies": {
+    "@radix-ui/react-select": "^2.2.6",
+    "clsx": "^2.1.0",
+    "docxtemplater": "^3.50.0",
+    "dompurify": "^3.2.0",
+    "jszip": "^3.10.1",
+    "pizzip": "^3.1.7",
+    "sonner": "^2.0.7",
+    "xml-js": "^1.6.11"
+  },
+  "peerDependencies": {
+    "prosemirror-commands": "^1.5.2",
+    "prosemirror-dropcursor": "^1.8.2",
+    "prosemirror-history": "^1.4.0",
+    "prosemirror-keymap": "^1.2.2",
+    "prosemirror-model": "^1.19.4",
+    "prosemirror-state": "^1.4.3",
+    "prosemirror-tables": "^1.8.5",
+    "prosemirror-transform": "^1.12.0",
+    "prosemirror-view": "^1.41.6",
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/bun": "^1.0.0",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "autoprefixer": "^10.4.17",
+    "class-variance-authority": "^0.7.0",
+    "postcss": "^8.4.33",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.1.0",
+    "prettier": "^3.8.1",
+    "prosemirror-commands": "^1.5.2",
+    "prosemirror-dropcursor": "^1.8.2",
+    "prosemirror-history": "^1.4.0",
+    "prosemirror-keymap": "^1.2.2",
+    "prosemirror-model": "^1.25.9",
+    "prosemirror-state": "^1.4.3",
+    "prosemirror-tables": "^1.8.5",
+    "prosemirror-transform": "^1.12.0",
+    "prosemirror-view": "^1.41.9",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^3.4.1",
+    "tailwindcss-animate": "^1.0.7",
+    "tsup": "^8.0.1",
+    "typescript": "^6.0.0"
+  },
+  "keywords": [
+    "docx",
+    "editor",
+    "word",
+    "document",
+    "react",
+    "prosemirror",
+    "wysiwyg"
+  ],
+  "overrides": {
+    "prosemirror-view": "1.41.9",
+    "prosemirror-state": "1.4.4",
+    "prosemirror-model": "1.25.9",
+    "prosemirror-transform": "1.12.0"
+  },
+  "resolutions": {
+    "prosemirror-view": "1.41.9",
+    "prosemirror-state": "1.4.4",
+    "prosemirror-model": "1.25.9",
+    "prosemirror-transform": "1.12.0"
+  }
+}

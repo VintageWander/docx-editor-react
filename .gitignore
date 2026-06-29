@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Build outputs — dist/ is committed so `bun add github:...` works with no
+# install-time build (no lifecycle script for Bun to block). Rebuild with
+# `bun run build` and commit before pushing.
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Build info
+*.tsbuildinfo
+
+# Environment
+.env
+.env.local
+.env.*.local

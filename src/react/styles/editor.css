@@ -1,0 +1,10 @@
+/* Single consumer-facing stylesheet for docx-editor-react.
+   Everything the editor needs is inlined here at build time (postcss-import):
+   - ProseMirror base styles (caret, selection)
+   - the hidden-editor chrome from core/prosemirror/editor.css
+   - the editor chrome + color tokens (single source of truth) from
+     core/styles/editor.css, which also hosts `@tailwind utilities`.
+   Consumers import `docx-editor-react/styles.css` once. */
+@import 'prosemirror-view/style/prosemirror.css';
+@import '../../core/prosemirror/editor.css';
+@import '../../core/styles/editor.css';
