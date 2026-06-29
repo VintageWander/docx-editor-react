@@ -13,13 +13,11 @@
  *   palette) and the .ep-root.dark scaffold
  * - Cursor/caret, selection, content-control, popup/menu chrome, etc.
  *
- * NOTE: `@tailwind utilities` lives here so the directive is shared; each
- * adapter's own Tailwind build (React via the CLI, Vue via vite PostCSS)
- * expands it against that adapter's component sources. We intentionally do NOT
- * include @tailwind base (preflight) to avoid resetting the host application.
+ * NOTE: Tailwind utilities are emitted by the adapter's CSS entry
+ * (src/react/styles/editor.css), which wraps `@tailwind utilities` in
+ * `@layer utilities { .ep-root { ... } }`. Preflight is intentionally NOT
+ * imported there, so the host application's base styles are never reset.
  */
-
-@tailwind utilities;
 
 /* ============================================================================
  * CSS CUSTOM PROPERTIES (shadcn theme)

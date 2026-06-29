@@ -12,6 +12,8 @@ const __configDir = path.dirname(fileURLToPath(import.meta.url));
  */
 export default {
   presets: [require('./tailwind-preset.cjs')],
-  important: '.ep-root',
+  // `.ep-root` scoping is now done in CSS (src/react/styles/editor.css wraps
+  // `@tailwind utilities` under `.ep-root`), the v4-supported replacement for
+  // the v3 `important: '<selector>'` strategy.
   content: [path.join(__configDir, 'src/**/*.{ts,tsx}')],
 };
