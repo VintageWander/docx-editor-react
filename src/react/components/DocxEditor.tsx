@@ -1548,6 +1548,12 @@ export const DocxEditor = forwardRef<DocxEditorRef, DocxEditorProps>(function Do
     const selectionState = extractSelectionState(view.state);
     handleSelectionChange(selectionState);
 
+    // Don't recompute sidebar expansion while focus is outside the editor — e.g.
+    // the user clicked into an expanded comment card's reply input. That blurs
+    // the editor and fires a selection event whose cursor is no longer on the
+    // comment mark, which would otherwise collapse the very card being used.
+    if (!view.hasFocus()) return;
+
     const $from = view.state.selection.$from;
     const marks = [
       ...(view.state.storedMarks ?? []),
