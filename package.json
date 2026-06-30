@@ -68,6 +68,16 @@
         "default": "./dist/styles.cjs"
       }
     },
+    "./headless": {
+      "import": {
+        "types": "./dist/headless.d.ts",
+        "default": "./dist/headless.js"
+      },
+      "require": {
+        "types": "./dist/headless.d.cts",
+        "default": "./dist/headless.cjs"
+      }
+    },
     "./styles.css": "./dist/styles.css"
   },
   "typesVersions": {
@@ -76,7 +86,8 @@
       "dialogs": ["./dist/dialogs.d.ts"],
       "hooks": ["./dist/hooks.d.ts"],
       "plugin-api": ["./dist/plugin-api.d.ts"],
-      "styles": ["./dist/styles.d.ts"]
+      "styles": ["./dist/styles.d.ts"],
+      "headless": ["./dist/headless.d.ts"]
     }
   },
   "sideEffects": ["*.css"],

@@ -172,6 +172,25 @@ export { attemptSelectiveSave } from './docx/selectiveSave';
 export { buildPatchedDocumentXml, validatePatchSafety } from './docx/selectiveXmlPatch';
 
 // ============================================================================
+// PROSEMIRROR CONVERSION + SCHEMA
+// ============================================================================
+
+// Bidirectional Document <-> ProseMirror conversion. Paired with the shared
+// `schema`, these let a server (or any non-DOM environment) drive the same
+// docx <-> ProseMirror <-> yjs pipeline the editor uses on the client — e.g.
+// seed a Y.Doc from docx bytes, or rebuild docx from a Y.Doc on save.
+export { toProseDoc, createEmptyDoc, fromProseDoc } from './prosemirror/conversion';
+export type { ToProseDocOptions } from './prosemirror/conversion';
+
+// The shared ProseMirror schema instance (built from the StarterKit extensions).
+// Use this when converting a yjs XmlFragment back to a ProseMirror node headless
+// (`yXmlFragmentToProseMirrorRootNode(fragment, schema)`); its node/mark specs
+// match the editor's, so fragments round-trip across client and server.
+export { schema, singletonManager } from './prosemirror/schema';
+export type { DocxSchema } from './prosemirror/schema';
+export { createStarterKit, ExtensionManager } from './prosemirror/extensions';
+
+// ============================================================================
 // TEMPLATE PROCESSING
 // ============================================================================
 

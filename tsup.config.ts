@@ -12,6 +12,7 @@ export default defineConfig({
     hooks: 'src/react/hooks/index.ts',
     'plugin-api': 'src/react/plugin-api/index.ts',
     styles: 'src/react/styles/index.ts',
+    headless: 'src/core/headless.ts',
   },
   format: ['cjs', 'esm'],
   dts: true,

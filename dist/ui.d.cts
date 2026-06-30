@@ -1,14 +1,15 @@
 import * as React$1 from 'react';
 import React__default, { CSSProperties, ReactNode } from 'react';
-import { T as Table, e as TableCell, f as ParagraphAlignment, g as ColorValue, S as SectionProperties, h as TabStop } from './run-DndcHMrf.cjs';
-import { S as Style, T as Theme, a as StyleType, D as Document } from './document-D89zCnot.cjs';
-import { F as FontOption, c as SelectionContext, d as AIAction, e as AgentResponse } from './print-DVoui39l.cjs';
-export { b as PrintOptions, f as formatPrintPageRange, g as getDefaultPrintOptions, i as isPrintSupported, o as openPrintWindow, p as parsePageRange, t as triggerPrint } from './print-DVoui39l.cjs';
-import { d as TableSelection, T as TableContext, b as TableSplitConfig, a as TableAction } from './TableToolbar-d8aVH-zz.cjs';
-export { F as FindReplaceOptions, c as FindReplaceState, e as TableToolbar, f as TableToolbarProps, U as UseFindReplaceReturn, u as useFindReplace } from './TableToolbar-d8aVH-zz.cjs';
+import { a as Table, n as TableCell, w as ParagraphAlignment, C as ColorValue, c as SectionProperties, x as TabStop } from './run-DQbevRIu.cjs';
+import { b as Style, T as Theme, c as StyleType, D as Document } from './document-DktZDMbO.cjs';
+import { F as FontOption } from './print-tbi-ebgs.cjs';
+export { P as PrintOptions, f as formatPrintPageRange, g as getDefaultPrintOptions, i as isPrintSupported, o as openPrintWindow, p as parsePageRange, t as triggerPrint } from './print-tbi-ebgs.cjs';
+import { d as TableSelection, T as TableContext, b as TableSplitConfig, a as TableAction } from './TableToolbar-WSUyHMo7.cjs';
+export { F as FindReplaceOptions, c as FindReplaceState, e as TableToolbar, f as TableToolbarProps, U as UseFindReplaceReturn, u as useFindReplace } from './TableToolbar-WSUyHMo7.cjs';
+import { S as SelectionContext, b as AIAction, d as AgentResponse } from './agentApi-D6BWmIeb.cjs';
 import { b as TranslationKey } from './index-DHTYI3R-.cjs';
-export { K as DialogKeyboardShortcut, F as FindReplaceDialog, a as FindReplaceDialogProps, H as HyperlinkData, b as HyperlinkDialog, c as HyperlinkDialogProps, d as KeyboardShortcutsDialog, e as KeyboardShortcutsDialogProps, P as PasteOption, f as PasteSpecialDialog, g as PasteSpecialDialogProps, S as ShortcutCategory, U as UseKeyboardShortcutsDialogOptions, h as UseKeyboardShortcutsDialogReturn, i as UsePasteSpecialOptions, j as UsePasteSpecialReturn, o as formatShortcutKeys, p as getAllCategories, q as getAllPasteOptions, r as getCategoryLabel, s as getCommonShortcuts, t as getDefaultPasteOption, u as getDefaultShortcuts, w as getPasteOption, x as getShortcutsByCategory, C as isPasteSpecialShortcut, L as useHyperlinkDialog, I as useKeyboardShortcutsDialog, J as usePasteSpecial } from './KeyboardShortcutsDialog-DB2LlsPg.cjs';
-export { F as FindMatch, a as FindOptions, b as FindResult, H as HighlightOptions, c as createDefaultFindOptions, d as createSearchPattern, e as escapeRegexString, f as findAllMatches, k as findInDocument, l as findInParagraph, g as getDefaultHighlightOptions, h as getMatchCountText, i as isEmptySearch, r as replaceAllInContent, j as replaceFirstInContent, s as scrollToMatch } from './clipboard-_eLTC5cf.cjs';
+export { K as DialogKeyboardShortcut, F as FindReplaceDialog, a as FindReplaceDialogProps, H as HyperlinkData, b as HyperlinkDialog, c as HyperlinkDialogProps, d as KeyboardShortcutsDialog, e as KeyboardShortcutsDialogProps, P as PasteOption, f as PasteSpecialDialog, g as PasteSpecialDialogProps, S as ShortcutCategory, U as UseKeyboardShortcutsDialogOptions, h as UseKeyboardShortcutsDialogReturn, i as UsePasteSpecialOptions, j as UsePasteSpecialReturn, o as formatShortcutKeys, p as getAllCategories, q as getAllPasteOptions, r as getCategoryLabel, s as getCommonShortcuts, t as getDefaultPasteOption, u as getDefaultShortcuts, w as getPasteOption, x as getShortcutsByCategory, C as isPasteSpecialShortcut, L as useHyperlinkDialog, I as useKeyboardShortcutsDialog, J as usePasteSpecial } from './KeyboardShortcutsDialog-bIZ_5EJk.cjs';
+export { F as FindMatch, a as FindOptions, b as FindResult, H as HighlightOptions, c as createDefaultFindOptions, d as createSearchPattern, e as escapeRegexString, f as findAllMatches, k as findInDocument, l as findInParagraph, g as getDefaultHighlightOptions, h as getMatchCountText, i as isEmptySearch, r as replaceAllInContent, j as replaceFirstInContent, s as scrollToMatch } from './clipboard-Cn-iBURU.cjs';
 
 /**
  * Document-model table operations — pure functions over the Table type:
