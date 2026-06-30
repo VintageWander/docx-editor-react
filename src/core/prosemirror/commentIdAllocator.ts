@@ -30,17 +30,20 @@ export interface CommentIdAllocator {
 }
 
 /**
- * Create an instance-scoped monotonic comment/revision ID allocator. IDs are
- * never reused (deleting a comment does not free its ID), and the counter is
- * private to this allocator — multiple editors get independent ID spaces.
+ * Create an instance-scoped comment/revision ID allocator.
+ *
+ * IDs are random 31-bit integers rather than a `max + 1` counter. In a
+ * collaborative setting two clients allocating at the same time would both pick
+ * the same `max + 1` and collide (clobbering each other's comment, which keys on
+ * the id) — random ids avoid that without any cross-client coordination, while
+ * staying within DOCX's integer `w:id` requirement (int32, never 0 so it never
+ * aliases the schema's default commentId). `seedAbove` is retained for API
+ * compatibility but is a no-op for random allocation.
  */
 export function createCommentIdAllocator(): CommentIdAllocator {
-  let nextId = 1;
   return {
-    next: () => nextId++,
-    seedAbove(maxId: number) {
-      if (maxId >= nextId) nextId = maxId + 1;
-    },
+    next: () => 1 + Math.floor(Math.random() * 0x7ffffffe),
+    seedAbove() {},
   };
 }
 
