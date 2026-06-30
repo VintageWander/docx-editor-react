@@ -234,7 +234,9 @@ function extractRunFormatting(marks: readonly Mark[], theme?: Theme | null): Run
 
       case 'comment': {
         const commentId = mark.attrs.commentId as number;
-        if (commentId) {
+        // `!= null` (not truthiness) — comment id 0 is a valid OOXML id and
+        // must still render its highlight.
+        if (commentId != null) {
           if (!formatting.commentIds) formatting.commentIds = [];
           formatting.commentIds.push(commentId);
         }

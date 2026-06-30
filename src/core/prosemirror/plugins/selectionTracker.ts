@@ -128,7 +128,8 @@ export function extractSelectionContext(state: EditorState): SelectionContext {
   let inDeletion = false;
 
   for (const mark of allMarks) {
-    if (mark.type.name === 'comment' && mark.attrs.commentId) {
+    // `!= null` (not truthiness) — comment id 0 is a valid OOXML id.
+    if (mark.type.name === 'comment' && mark.attrs.commentId != null) {
       activeCommentIds.push(mark.attrs.commentId);
     }
     if (mark.type.name === 'insertion') {
